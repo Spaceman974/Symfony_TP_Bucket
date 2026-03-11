@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ parent() }} | List
+{% endblock %}
+
+{% block main %}
+
+
+
+
+    <div class="grid h-48 grid-cols-1 place-content-center text-center justify-items-center align-middle "
+         style="height: 100%">
+        <ul class="justify-items-start">
+            {% for index0, wish in wishes %}
+                <li class="m-5"><a href="{{ path('wish_detail', {'id': wish.id}) }}">{{ wish.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <div class="flex items-center justify-center">
+            {% if currentPage > 1 %}
+                <a href="{{ path('wish_list', {'page': currentPage-1}) }}">
+                    <button
+                        class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white mx-5 py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                        Previous page
+                    </button>
+                </a>
+            {% endif %}
+            {% if currentPage < maxPage %}
+                <a href="{{ path('wish_list', {'page': currentPage+1}) }}">
+                    <button
+                        class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white mx-5 py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                        Next page
+                    </button>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+
+
+
+{% endblock %}

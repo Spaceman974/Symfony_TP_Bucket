@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ parent() }} | About
+{% endblock %}
+
+{% block main %}
+    <section class="grid h-48 grid-cols-1 place-content-center text-center justify-items-center align-middle "
+             style="height: 100%">
+        <div>
+            <h2 class="text-3xl font-bold"> Détails de la chose à faire N°{{ wish_id.id }}</h2>
+        </div>
+        <br>
+
+        <div>
+            {{ wish_id.title }}
+        </div>
+        <br>
+        <div>
+            Créé le {{ wish_id.dateCreated | date ('d/m/Y') }} par {{ wish_id.author }}
+        </div>
+        <br>
+        <div>
+            Description : {{ wish_id.description }}
+        </div>
+
+        <div>
+            publié : {{ wish_id.published }}
+        </div>
+    </section>
+
+{% endblock %}
