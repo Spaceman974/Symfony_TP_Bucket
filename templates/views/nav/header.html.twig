@@ -24,6 +24,7 @@
 
             <a href="{{ path('main_home') }}" class="text-sm/6 font-semibold text-gray-900">Home</a>
             <a href="{{ path('wish_list') }}" class="text-sm/6 font-semibold text-gray-900">My Bucket-list</a>
+            <a href="{{ path('wish_add') }}" class="text-sm/6 font-semibold text-gray-900">Add a wish</a>
             <a href="{{ path('main_about') }}" class="text-sm/6 font-semibold text-gray-900">About</a>
 
         </el-popover-group>
@@ -55,9 +56,12 @@
                             <div class="space-y-2 py-6">
                                 <a href="{{ path('main_home') }}"
                                    class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Home</a>
-                                <a href="{{ path('main_bucket') }}"
+                                <a href="{{ path('wish_list') }}"
                                    class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">My
                                     Bucket-list</a>
+                                <a href="{{ path('wish_add') }}"
+                                   class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Add
+                                    a wish</a>
                                 <a href="{{ path('main_about') }}"
                                    class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">About</a>
                             </div>

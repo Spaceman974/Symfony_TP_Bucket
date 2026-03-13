@@ -14,7 +14,20 @@
 </head>
 <body>
 {% include 'views/nav/header.html.twig' %}
-<main style="height: 68vh"> {% block main %}{% endblock %}</main>
+<main class="min-h-[calc(60vh-8rem)] flex flex-col items-center justify-center"
+      style="height: 68vh">
+
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="flash flash-{{ label }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+    <div>
+        {% block main %}{% endblock %}
+    </div>
+</main>
 {% include 'views/nav/footer.html.twig' %}
 </body>
 

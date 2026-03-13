@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+
+    <div class="flex items-center justify-center min-h-screen">
+        {% embed 'views/form/wish-form.html.twig' %}
+            {% block formTitle %}
+                Create your wish here !
+            {% endblock %}
+            {% block buttonLabel %}
+                Create !
+            {% endblock %}
+        {% endembed %}
+    </div>
+
+{% endblock %}
+

@@ -1,9 +1,85 @@
 body {
-    background-color: rgba(173, 148, 211, 0.25);
+    background-color: rgba(142, 187, 232, 0.45);
 }
 
 header {
-    background-color: antiquewhite;
+    background-color: #f6efe7;
 }
 
 
+.backblanc {
+    background-color: #f6efe7;
+    border: solid black;
+    border-radius: 8px;
+    border-width: 0.5px;
+    width: 70vh;
+}
+
+input {
+    border-radius: 8px;
+    border: gray solid;
+    border-width: 0.5px;
+}
+
+textarea {
+    border-radius: 8px;
+    border: gray solid;
+    border-width: 0.5px;
+}
+
+form-error {
+    color: red;
+}
+
+.flash {
+    padding: 20px;
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin: 1rem 0;
+    border-radius: 5px;
+    color: #132135;
+}
+
+.flash-success {
+    background-color: #08a334
+}
+
+
+.wishList {
+    border: solid black 0.2px;
+    width: 30vh;
+    height: 8vh;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f6efe7;
+}
+
+.wishList:hover {
+    border: solid black 0.2px;
+    width: 30vh;
+    height: 8vh;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #efe0c4;
+}
+
+.listAffichage {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+.imgWish {
+    width: 22vh;
+    height: 22vh;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+.imgList {
+    width: 6vh;
+    height: 6vh;
+    object-fit: cover;
+    object-position: center;
+}

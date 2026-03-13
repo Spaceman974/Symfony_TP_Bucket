@@ -11,9 +11,14 @@
 
     <div class="grid h-48 grid-cols-1 place-content-center text-center justify-items-center align-middle "
          style="height: 100%">
-        <ul class="justify-items-start">
+        <ul class="justify-items-start listAffichage">
             {% for index0, wish in wishes %}
-                <li class="m-5"><a href="{{ path('wish_detail', {'id': wish.id}) }}">{{ wish.title }}</a>
+                <li class="m-5 wishList">
+                    <a href="{{ path('wish_detail', {'id': wish.id}) }}" class="flex items-center gap-3">
+                        <img class="imgList flex-shrink-0" src="{{ asset('images/' ~ wish.image) }}"
+                             alt="{{ wish.title }}">
+                        <span>{{ wish.title }}</span>
+                    </a>
                 </li>
             {% endfor %}
         </ul>

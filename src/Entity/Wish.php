@@ -5,7 +5,9 @@ namespace App\Entity;
 use App\Repository\WishRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
+#[ORM\HasLifecycleCallbacks]
 #[ORM\Entity(repositoryClass: WishRepository::class)]
 class Wish
 {
@@ -15,16 +17,24 @@ class Wish
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: 'Enter your wish')]
+    #[Assert\Length(max: 255, maxMessage: '255 char max')]
     private ?string $title = null;
+
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
 
     #[ORM\Column(length: 50)]
+    #[Assert\NotBlank(message: 'Enter your name')]
+    #[Assert\Length(max: 50, maxMessage: '50 char max')]
     private ?string $author = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $image = null;
+
     #[ORM\Column]
-    private ?bool $isPublished = null;
+    private ?bool $isPublished = true;
 
     #[ORM\Column(nullable: true)]
     private ?\DateTime $dateCreated = null;
@@ -73,6 +83,18 @@ class Wish
         return $this;
     }
 
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): static
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
     public function isPublished(): ?bool
     {
         return $this->isPublished;
@@ -107,5 +129,17 @@ class Wish
         $this->dateUpdated = $dateUpdated;
 
         return $this;
+    }
+
+    #[ORM\PrePersist()]
+    public function creationDate()
+    {
+        $this->setDateCreated(new \DateTime());
+    }
+
+    #[ORM\PreUpdate()]
+    public function updateDate()
+    {
+        $this->setDateUpdated(new \DateTime());
     }
 }
