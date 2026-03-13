@@ -39,8 +39,10 @@
                         </a>
 
                         <a href="{{ path('wish_delete', {'id': wish_id.id}) }}">
-                            <button type="button"
-                                    class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                            <button
+                                onclick="return confirm('Warning, do you really want to delete your wish {{ wish_id.title }}?')"
+                                type="button"
+                                class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
                                 Supprimer
                             </button>
                         </a>

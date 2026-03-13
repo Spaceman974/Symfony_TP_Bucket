@@ -141,7 +141,7 @@ final class WishController extends AbstractController
         $entityManager->flush();
 
         $this->addFlash('success', 'Your wish has been deleted');
-        return $this->render('home.html.twig');
+        return $this->redirectToRoute('wish_list');
 
     }
 }

@@ -52,7 +52,7 @@ class Wish
         return $this->title;
     }
 
-    public function setTitle(string $title): static
+    public function setTitle(?string $title): static //? pour qu'il soit null lors de l'update
     {
         $this->title = $title;
 
@@ -76,7 +76,7 @@ class Wish
         return $this->author;
     }
 
-    public function setAuthor(string $author): static
+    public function setAuthor(?string $author): static
     {
         $this->author = $author;
 
